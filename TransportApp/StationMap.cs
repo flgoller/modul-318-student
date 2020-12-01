@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Device.Location;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -17,10 +18,12 @@ namespace TransportApp
 {
     public partial class StationMap : Form
     {
-        private ITransport _transport = new Transport();            //Instanz der Transport Klasse erstellen
+        private ITransport _Itransport = new Transport();            //Instanz der Transport Klasse erstellen
         StationBoardRoot stationBoard = new StationBoardRoot();                            //Neues Objekt station der Klase Station erstellen
-          
-        GMarkerGoogle marker;
+        GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
+    Transport _transport = new Transport();
+
+    GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
 
@@ -31,17 +34,30 @@ namespace TransportApp
         public StationMap()
         {
             InitializeComponent();
+            watcher.Start();
         }
 
         private void StationMap_Load(object sender, EventArgs e)
         {
+          if (watcher.Position.Location.IsUnknown)
+          {
+            MessageBox.Show("Aktueller Standort nicht gefunden");
+          }
+
+          else
+          {
+            double x = watcher.Position.Location.Latitude;
+            double y = watcher.Position.Location.Longitude;
             StationgMapControl.DragButton = MouseButtons.Left;
             StationgMapControl.CanDragMap = true;
             StationgMapControl.MapProvider = GMapProviders.GoogleMap;
+            StationgMapControl.Position = new PointLatLng(x, y);
             StationgMapControl.MinZoom = 0;
             StationgMapControl.MaxZoom = 24;
             StationgMapControl.Zoom = 20;
             StationgMapControl.AutoScroll = true;
+
+          }
         }
         private void tbxSearch_Click(object sender, EventArgs e)
         {
@@ -100,8 +116,7 @@ namespace TransportApp
             //Overlay covern
             StationgMapControl.Overlays.Add(markers);
         }
-
-        private void btnHome_Click(object sender, EventArgs e)
+    private void btnHome_Click(object sender, EventArgs e)
         {
             MainMenu frm = new MainMenu();      // Objekt von MainMenu erstellen:
             frm.Show();                         // MainMenu anzeigen
