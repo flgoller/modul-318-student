@@ -21,9 +21,9 @@ namespace TransportApp
         private ITransport _Itransport = new Transport();            //Instanz der Transport Klasse erstellen
         StationBoardRoot stationBoard = new StationBoardRoot();                            //Neues Objekt station der Klase Station erstellen
         GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
-    Transport _transport = new Transport();
+        Transport _transport = new Transport();
 
-    GMarkerGoogle marker;
+        GMarkerGoogle marker;
         GMapOverlay markerOverlay;
         DataTable dt;
 
@@ -42,6 +42,7 @@ namespace TransportApp
           if (watcher.Position.Location.IsUnknown)
           {
             MessageBox.Show("Aktueller Standort nicht gefunden");
+            Close();
           }
 
           else
@@ -54,7 +55,7 @@ namespace TransportApp
             StationgMapControl.Position = new PointLatLng(x, y);
             StationgMapControl.MinZoom = 0;
             StationgMapControl.MaxZoom = 24;
-            StationgMapControl.Zoom = 20;
+            StationgMapControl.Zoom = 10;
             StationgMapControl.AutoScroll = true;
 
           }
