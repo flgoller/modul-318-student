@@ -117,41 +117,37 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="fileSystemWatcher1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <metadata name="BusTrainNumber.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="DepartureStation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="ArrivalStation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Vehicle.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="DepartureTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnHome.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        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
-</value>
-  </data>
+  <metadata name="ArrivalTime.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Duration.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Delay.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="yourGps.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="StationName.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="Distance.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
 </root>

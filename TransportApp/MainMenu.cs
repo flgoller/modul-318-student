@@ -36,5 +36,19 @@ namespace TransportApp
             frm.Show(); // DepartureList anzeigen
             this.Hide();
         }
+
+        private void btnMainMenuNavigation_Click(object sender, EventArgs e)
+        {
+            StationMap frm = new StationMap();
+            frm.Show();
+            this.Hide();
+        }
+
+        private void btnMainMenuNearbyStations_Click(object sender, EventArgs e)
+        {
+            NearbyStation frm = new NearbyStation();
+            frm.Show();
+            this.Hide();
+        }
     }
 }

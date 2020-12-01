@@ -31,7 +31,7 @@ namespace TransportApp
         {
             this.btnMainMenuSearchConnection = new System.Windows.Forms.Button();
             this.btnMainMenuNavigation = new System.Windows.Forms.Button();
-            this.btnMainMenuTakeMeHome = new System.Windows.Forms.Button();
+            this.btnMainMenuNearbyStations = new System.Windows.Forms.Button();
             this.btnMainMenuAbort = new System.Windows.Forms.Button();
             this.lblMainMenuSellectOption = new System.Windows.Forms.Label();
             this.btnDepartureList = new System.Windows.Forms.Button();
@@ -42,10 +42,9 @@ namespace TransportApp
             this.btnMainMenuSearchConnection.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMainMenuSearchConnection.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMainMenuSearchConnection.Location = new System.Drawing.Point(74, 79);
-            this.btnMainMenuSearchConnection.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMainMenuSearchConnection.Location = new System.Drawing.Point(111, 122);
             this.btnMainMenuSearchConnection.Name = "btnMainMenuSearchConnection";
-            this.btnMainMenuSearchConnection.Size = new System.Drawing.Size(275, 43);
+            this.btnMainMenuSearchConnection.Size = new System.Drawing.Size(412, 66);
             this.btnMainMenuSearchConnection.TabIndex = 0;
             this.btnMainMenuSearchConnection.Text = "Verbindung Suchen";
             this.btnMainMenuSearchConnection.UseVisualStyleBackColor = true;
@@ -56,34 +55,33 @@ namespace TransportApp
             this.btnMainMenuNavigation.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMainMenuNavigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMainMenuNavigation.Location = new System.Drawing.Point(74, 144);
-            this.btnMainMenuNavigation.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMainMenuNavigation.Location = new System.Drawing.Point(111, 222);
             this.btnMainMenuNavigation.Name = "btnMainMenuNavigation";
-            this.btnMainMenuNavigation.Size = new System.Drawing.Size(275, 43);
+            this.btnMainMenuNavigation.Size = new System.Drawing.Size(412, 66);
             this.btnMainMenuNavigation.TabIndex = 1;
             this.btnMainMenuNavigation.Text = "Navigation zur Station";
             this.btnMainMenuNavigation.UseVisualStyleBackColor = true;
+            this.btnMainMenuNavigation.Click += new System.EventHandler(this.btnMainMenuNavigation_Click);
             // 
-            // btnMainMenuTakeMeHome
+            // btnMainMenuNearbyStations
             // 
-            this.btnMainMenuTakeMeHome.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.btnMainMenuNearbyStations.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMainMenuTakeMeHome.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMainMenuTakeMeHome.Location = new System.Drawing.Point(74, 270);
-            this.btnMainMenuTakeMeHome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnMainMenuTakeMeHome.Name = "btnMainMenuTakeMeHome";
-            this.btnMainMenuTakeMeHome.Size = new System.Drawing.Size(275, 43);
-            this.btnMainMenuTakeMeHome.TabIndex = 3;
-            this.btnMainMenuTakeMeHome.Text = "Take Me Home";
-            this.btnMainMenuTakeMeHome.UseVisualStyleBackColor = true;
+            this.btnMainMenuNearbyStations.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMainMenuNearbyStations.Location = new System.Drawing.Point(111, 415);
+            this.btnMainMenuNearbyStations.Name = "btnMainMenuNearbyStations";
+            this.btnMainMenuNearbyStations.Size = new System.Drawing.Size(412, 66);
+            this.btnMainMenuNearbyStations.TabIndex = 3;
+            this.btnMainMenuNearbyStations.Text = "Nahe Stationen";
+            this.btnMainMenuNearbyStations.UseVisualStyleBackColor = true;
+            this.btnMainMenuNearbyStations.Click += new System.EventHandler(this.btnMainMenuNearbyStations_Click);
             // 
             // btnMainMenuAbort
             // 
             this.btnMainMenuAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMainMenuAbort.Location = new System.Drawing.Point(381, 307);
-            this.btnMainMenuAbort.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnMainMenuAbort.Location = new System.Drawing.Point(572, 472);
             this.btnMainMenuAbort.Name = "btnMainMenuAbort";
-            this.btnMainMenuAbort.Size = new System.Drawing.Size(66, 21);
+            this.btnMainMenuAbort.Size = new System.Drawing.Size(99, 32);
             this.btnMainMenuAbort.TabIndex = 4;
             this.btnMainMenuAbort.Text = "Abbruch";
             this.btnMainMenuAbort.UseVisualStyleBackColor = true;
@@ -95,10 +93,9 @@ namespace TransportApp
             | System.Windows.Forms.AnchorStyles.Right)));
             this.lblMainMenuSellectOption.AutoSize = true;
             this.lblMainMenuSellectOption.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMainMenuSellectOption.Location = new System.Drawing.Point(43, 18);
-            this.lblMainMenuSellectOption.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblMainMenuSellectOption.Location = new System.Drawing.Point(64, 28);
             this.lblMainMenuSellectOption.Name = "lblMainMenuSellectOption";
-            this.lblMainMenuSellectOption.Size = new System.Drawing.Size(375, 37);
+            this.lblMainMenuSellectOption.Size = new System.Drawing.Size(563, 55);
             this.lblMainMenuSellectOption.TabIndex = 4;
             this.lblMainMenuSellectOption.Text = "Was wollen Sie machen?";
             // 
@@ -107,10 +104,9 @@ namespace TransportApp
             this.btnDepartureList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.btnDepartureList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDepartureList.Location = new System.Drawing.Point(74, 209);
-            this.btnDepartureList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnDepartureList.Location = new System.Drawing.Point(111, 322);
             this.btnDepartureList.Name = "btnDepartureList";
-            this.btnDepartureList.Size = new System.Drawing.Size(275, 43);
+            this.btnDepartureList.Size = new System.Drawing.Size(412, 66);
             this.btnDepartureList.TabIndex = 2;
             this.btnDepartureList.Text = "Abfahrtstafel";
             this.btnDepartureList.UseVisualStyleBackColor = true;
@@ -118,18 +114,17 @@ namespace TransportApp
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(459, 347);
+            this.ClientSize = new System.Drawing.Size(680, 508);
             this.Controls.Add(this.btnDepartureList);
             this.Controls.Add(this.lblMainMenuSellectOption);
             this.Controls.Add(this.btnMainMenuAbort);
-            this.Controls.Add(this.btnMainMenuTakeMeHome);
+            this.Controls.Add(this.btnMainMenuNearbyStations);
             this.Controls.Add(this.btnMainMenuNavigation);
             this.Controls.Add(this.btnMainMenuSearchConnection);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.MaximumSize = new System.Drawing.Size(475, 386);
-            this.MinimumSize = new System.Drawing.Size(475, 386);
+            this.MaximumSize = new System.Drawing.Size(702, 564);
+            this.MinimumSize = new System.Drawing.Size(702, 564);
             this.Name = "MainMenu";
             this.Text = "Hauptmenu";
             this.ResumeLayout(false);
@@ -141,7 +136,7 @@ namespace TransportApp
 
         private System.Windows.Forms.Button btnMainMenuSearchConnection;
         private System.Windows.Forms.Button btnMainMenuNavigation;
-        private System.Windows.Forms.Button btnMainMenuTakeMeHome;
+        private System.Windows.Forms.Button btnMainMenuNearbyStations;
         private System.Windows.Forms.Button btnMainMenuAbort;
         private System.Windows.Forms.Label lblMainMenuSellectOption;
         private System.Windows.Forms.Button btnDepartureList;

@@ -19,6 +19,8 @@ namespace TransportApp
         Transport transport = new Transport();                      //Neues Objekt transport der Klase Transport erstellen
         Connections connections = new Connections();                //Neues Objekt connections der Klase Connections erstellen
 
+        string Email = "";
+
         public SearchConnection()
         {
             InitializeComponent();
@@ -48,7 +50,9 @@ namespace TransportApp
                         try
                         {
                             string Date = SearchdateTimePicker.Value.ToString().Substring(startIndex:0, length: 10);
-                            connections = transport.GetConnections(tbxDeparture.Text, tbxArrival.Text, Date);
+                            string Time = HoursnumericUpDown.Value.ToString() +":" + MinutesnumericUpDown.Value.ToString();
+                            
+                            connections = transport.GetConnections(tbxDeparture.Text, tbxArrival.Text, Date, Time);
                             FillDataGridView();
                         }
                         catch
@@ -82,19 +86,25 @@ namespace TransportApp
 
                 foreach (Connection connection in connections.ConnectionList)
                 {
-                DateTime DateDeparture = Convert.ToDateTime(connection.From.Departure.Substring(startIndex: 11, length: 8));
-                DateTime DateArrival = Convert.ToDateTime(connection.To.Arrival.Substring(startIndex: 11, length: 8));
+                DateTime DateDeparture = Convert.ToDateTime(connection.From.Departure);
+                DateTime DateArrival = Convert.ToDateTime(connection.To.Arrival);
                 DateTime InputDateTime = Convert.ToDateTime(SearchdateTimePicker.Value);
+                string xCoordinate = connection.From.Station.Coordinate.ToString();
+                     if(connection.From.Delay == null)
+                     {
+                          connection.From.Delay = 0;
+                     }
+
                     if (i <= 4)
                     {
-                         ConnectionSelectiondataGridView.Rows.Add(
-                             connection.From.Platform,
-                             connection.From.Station.Name,
-                             connection.To.Station.Name,
-                             DateDeparture,
-                             DateArrival,
-                             connection.Duration.Substring(startIndex: 3, length: 5),
-                             connection.From.Delay + " Minute");
+                          ConnectionSelectiondataGridView.Rows.Add(
+                          connection.From.Platform,
+                          connection.From.Station.Name,
+                          connection.To.Station.Name,
+                          DateDeparture,
+                          DateArrival,
+                          connection.Duration.Substring(startIndex: 3, length: 5),
+                          connection.From.Delay + " Minute");
 
                         i++;
                     }
@@ -117,7 +127,15 @@ namespace TransportApp
 
         private void OnFormLoad(object sender, EventArgs e)
         {
-            
+            MinutesnumericUpDown.Value = DateTime.Now.Minute;
+            HoursnumericUpDown.Value = DateTime.Now.Hour;
+
+            tbxDeparture.AutoCompleteMode = AutoCompleteMode.Suggest;
+            tbxDeparture.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
+            tbxArrival.AutoCompleteMode = AutoCompleteMode.Suggest;
+            tbxArrival.AutoCompleteSource = AutoCompleteSource.CustomSource;
+
         }
 
         private void btnChange_Click(object sender, EventArgs e)
@@ -144,10 +162,48 @@ namespace TransportApp
                 {
                     temp.Add(station.Name);
                 }
-                var autoComplete = new AutoCompleteStringCollection();
-                autoComplete.AddRange(temp.ToArray());
-                tbxDeparture.AutoCompleteCustomSource = autoComplete;
+                if(AutoCompletecheckBox.Checked==true)
+                {
+                    var autoComplete = new AutoCompleteStringCollection();
+                    autoComplete.AddRange(temp.ToArray());
+                    tbxDeparture.AutoCompleteCustomSource = autoComplete;
+                }
+                else
+                {
+                    var autoComplete = new AutoCompleteStringCollection();
+                    autoComplete.Clear();
+                    tbxArrival.AutoCompleteCustomSource = autoComplete;
+                }
             }
+        }
+        private void tbxArrival_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxArrival.Text.Length >= 1 && tbxArrival.Text != " ")
+            {
+                List<string> temp = new List<string>();
+                foreach (var station in _transport.GetStations(tbxArrival.Text).StationList)
+                {
+                    temp.Add(station.Name);
+                }
+                if (AutoCompletecheckBox.Checked == true)
+                {
+                    var autoComplete = new AutoCompleteStringCollection();
+                    autoComplete.AddRange(temp.ToArray());
+                    tbxArrival.AutoCompleteCustomSource = autoComplete;
+                }
+                else
+                {
+                    var autoComplete = new AutoCompleteStringCollection();
+                    autoComplete.Clear();
+                    tbxArrival.AutoCompleteCustomSource = autoComplete;
+                }
+
+            }
+        }
+
+        private void ConnectionSelectiondataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            Email = ConnectionSelectiondataGridView.SelectedColumns.ToString();
         }
     }
 }
