@@ -201,11 +201,6 @@ namespace TransportApp
             }
         }
 
-        private void ConnectionSelectiondataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Email = ConnectionSelectiondataGridView.SelectedColumns.ToString();
-        }
-
     private void btnMail_click(object sender, EventArgs e)
     {
 

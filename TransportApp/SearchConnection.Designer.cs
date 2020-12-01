@@ -264,7 +264,6 @@ namespace TransportApp
       this.ConnectionSelectiondataGridView.RowTemplate.Height = 28;
       this.ConnectionSelectiondataGridView.Size = new System.Drawing.Size(846, 178);
       this.ConnectionSelectiondataGridView.TabIndex = 9;
-      this.ConnectionSelectiondataGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ConnectionSelectiondataGridView_CellDoubleClick);
       // 
       // BusTrainNumber
       // 
@@ -376,5 +375,5 @@ namespace TransportApp
         private System.Windows.Forms.NumericUpDown HoursnumericUpDown;
         private System.Windows.Forms.NumericUpDown MinutesnumericUpDown;
         private System.Windows.Forms.CheckBox AutoCompletecheckBox;
-    }
+  }
 }
