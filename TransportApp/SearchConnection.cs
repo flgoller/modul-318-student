@@ -1,12 +1,6 @@
 ﻿using SwissTransport;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TransportApp
@@ -18,8 +12,6 @@ namespace TransportApp
         Stations stations = new Stations();                         //Neues Objekt stations der Klase Stations erstellen
         Transport transport = new Transport();                      //Neues Objekt transport der Klase Transport erstellen
         Connections connections = new Connections();                //Neues Objekt connections der Klase Connections erstellen
-
-        string Email = "";
 
         public SearchConnection()
         {
@@ -104,7 +96,7 @@ namespace TransportApp
                           DateDeparture,
                           DateArrival,
                           connection.Duration.Substring(startIndex: 3, length: 5),
-                          connection.From.Delay + " Minute");
+                          connection.From.Delay + " Minute(n)");
 
                         i++;
                     }
@@ -214,7 +206,7 @@ namespace TransportApp
             dataGridViewlist.Add(cell.Value.ToString());
           }
         }
-        if (dataGridViewlist != null) System.Diagnostics.Process.Start("mailto:" + "?subject=Meine Verbindung" + "&body=Gleis: " + dataGridViewlist[0] + ", Von: " + dataGridViewlist[1] + ", Nach: " + dataGridViewlist[2] + ", Abfahrtszeit: " + dataGridViewlist[3] + ", Ankunftszeit: " + dataGridViewlist[4] + ", Dauer: " + dataGridViewlist[5] + ", Verspätung: " + dataGridViewlist[6] + " min");
+        if (dataGridViewlist != null) System.Diagnostics.Process.Start("mailto:" + "?subject=Meine Verbindung" + "&body=Gleis: " + dataGridViewlist[0] + ", Von: " + dataGridViewlist[1] + ", Nach: " + dataGridViewlist[2] + ", Abfahrtszeit: " + dataGridViewlist[3] + ", Ankunftszeit: " + dataGridViewlist[4] + ", Dauer: " + dataGridViewlist[5] + ", Verspätung: " + dataGridViewlist[6]);
       }
       catch
       {
