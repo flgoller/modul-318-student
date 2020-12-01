@@ -205,5 +205,26 @@ namespace TransportApp
         {
             Email = ConnectionSelectiondataGridView.SelectedColumns.ToString();
         }
+
+    private void btnMail_click(object sender, EventArgs e)
+    {
+
+      try
+      {
+        var dataGridViewlist = new List<string>();
+        foreach (DataGridViewRow row in ConnectionSelectiondataGridView.SelectedRows)
+        {
+          foreach (DataGridViewCell cell in row.Cells)
+          {
+            dataGridViewlist.Add(cell.Value.ToString());
+          }
+        }
+        if (dataGridViewlist != null) System.Diagnostics.Process.Start("mailto:" + "?subject=Meine Verbindung" + "&body=Von: " + dataGridViewlist[0] + " Nach: " + dataGridViewlist[1] + ", Abfahrt: " + dataGridViewlist[2] + " Ankunft: " + dataGridViewlist[3] + ", Gleis: " + dataGridViewlist[4]);
+      }
+      catch
+      {
+        MessageBox.Show("Wählen sie eine Reihe aus.");
+      }
     }
+  }
 }
