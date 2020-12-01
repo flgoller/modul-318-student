@@ -206,7 +206,7 @@ namespace TransportApp
             dataGridViewlist.Add(cell.Value.ToString());
           }
         }
-        if (dataGridViewlist != null) System.Diagnostics.Process.Start("mailto:" + "?subject=Meine Verbindung" + "&body=Gleis: " + dataGridViewlist[0] + ", Von: " + dataGridViewlist[1] + ", Nach: " + dataGridViewlist[2] + ", Abfahrtszeit: " + dataGridViewlist[3] + ", Ankunftszeit: " + dataGridViewlist[4] + ", Dauer: " + dataGridViewlist[5] + ", Verspätung: " + dataGridViewlist[6]);
+        if (dataGridViewlist != null) System.Diagnostics.Process.Start("mailto:" + "?subject=Meine Kundenverbindung" + "&body=Gleis: " + dataGridViewlist[0] + ", Von: " + dataGridViewlist[1] + ", Nach: " + dataGridViewlist[2] + ", Abfahrtszeit: " + dataGridViewlist[3] + ", Ankunftszeit: " + dataGridViewlist[4] + ", Dauer: " + dataGridViewlist[5] + ", Verspätung: " + dataGridViewlist[6]);
       }
       catch
       {
