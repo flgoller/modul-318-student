@@ -79,6 +79,7 @@ namespace TransportApp
             // btnMainMenuAbort
             // 
             this.btnMainMenuAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMainMenuAbort.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnMainMenuAbort.Location = new System.Drawing.Point(572, 472);
             this.btnMainMenuAbort.Name = "btnMainMenuAbort";
             this.btnMainMenuAbort.Size = new System.Drawing.Size(99, 32);
@@ -116,6 +117,7 @@ namespace TransportApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnMainMenuAbort;
             this.ClientSize = new System.Drawing.Size(680, 508);
             this.Controls.Add(this.btnDepartureList);
             this.Controls.Add(this.lblMainMenuSellectOption);

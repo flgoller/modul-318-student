@@ -48,18 +48,20 @@ namespace TransportApp
             // 
             this.lblStation.AutoSize = true;
             this.lblStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStation.Location = new System.Drawing.Point(12, 56);
+            this.lblStation.Location = new System.Drawing.Point(18, 86);
+            this.lblStation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblStation.Name = "lblStation";
-            this.lblStation.Size = new System.Drawing.Size(52, 16);
+            this.lblStation.Size = new System.Drawing.Size(79, 25);
             this.lblStation.TabIndex = 0;
             this.lblStation.Text = "Station:";
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnSearch.Location = new System.Drawing.Point(264, 45);
+            this.btnSearch.Location = new System.Drawing.Point(396, 69);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(148, 35);
+            this.btnSearch.Size = new System.Drawing.Size(222, 54);
             this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -67,18 +69,20 @@ namespace TransportApp
             // 
             // tbxDepartureStation
             // 
-            this.tbxDepartureStation.Location = new System.Drawing.Point(70, 55);
+            this.tbxDepartureStation.Location = new System.Drawing.Point(105, 85);
+            this.tbxDepartureStation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbxDepartureStation.Name = "tbxDepartureStation";
-            this.tbxDepartureStation.Size = new System.Drawing.Size(152, 20);
+            this.tbxDepartureStation.Size = new System.Drawing.Size(226, 26);
             this.tbxDepartureStation.TabIndex = 0;
             this.tbxDepartureStation.TextChanged += new System.EventHandler(this.tbxDepartureStation_TextChanged);
             // 
             // btnReturn
             // 
             this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturn.Location = new System.Drawing.Point(353, 309);
+            this.btnReturn.Location = new System.Drawing.Point(530, 475);
+            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(90, 24);
+            this.btnReturn.Size = new System.Drawing.Size(135, 37);
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Zurück";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -87,9 +91,11 @@ namespace TransportApp
             // btnAbort
             // 
             this.btnAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbort.Location = new System.Drawing.Point(449, 309);
+            this.btnAbort.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnAbort.Location = new System.Drawing.Point(674, 475);
+            this.btnAbort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnAbort.Name = "btnAbort";
-            this.btnAbort.Size = new System.Drawing.Size(90, 24);
+            this.btnAbort.Size = new System.Drawing.Size(135, 37);
             this.btnAbort.TabIndex = 5;
             this.btnAbort.Text = "Abbruch";
             this.btnAbort.UseVisualStyleBackColor = true;
@@ -106,10 +112,11 @@ namespace TransportApp
             this.DepartureStation,
             this.ArrivalStation,
             this.Vehicle});
-            this.StationBoarddataGridView.Location = new System.Drawing.Point(12, 105);
+            this.StationBoarddataGridView.Location = new System.Drawing.Point(18, 162);
+            this.StationBoarddataGridView.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.StationBoarddataGridView.Name = "StationBoarddataGridView";
             this.StationBoarddataGridView.RowHeadersWidth = 62;
-            this.StationBoarddataGridView.Size = new System.Drawing.Size(418, 176);
+            this.StationBoarddataGridView.Size = new System.Drawing.Size(627, 271);
             this.StationBoarddataGridView.TabIndex = 2;
             // 
             // DepartureStation
@@ -133,9 +140,10 @@ namespace TransportApp
             // btnHome
             // 
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(506, 12);
+            this.btnHome.Location = new System.Drawing.Point(759, 18);
+            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(33, 31);
+            this.btnHome.Size = new System.Drawing.Size(50, 48);
             this.btnHome.TabIndex = 3;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -143,18 +151,21 @@ namespace TransportApp
             // AutoCompletionCheckBox
             // 
             this.AutoCompletionCheckBox.AutoSize = true;
-            this.AutoCompletionCheckBox.Location = new System.Drawing.Point(70, 82);
+            this.AutoCompletionCheckBox.Location = new System.Drawing.Point(105, 126);
+            this.AutoCompletionCheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.AutoCompletionCheckBox.Name = "AutoCompletionCheckBox";
-            this.AutoCompletionCheckBox.Size = new System.Drawing.Size(70, 17);
+            this.AutoCompletionCheckBox.Size = new System.Drawing.Size(101, 24);
             this.AutoCompletionCheckBox.TabIndex = 6;
             this.AutoCompletionCheckBox.Text = "Suchhilfe";
             this.AutoCompletionCheckBox.UseVisualStyleBackColor = true;
             // 
             // DepartureList
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AcceptButton = this.btnSearch;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(551, 345);
+            this.CancelButton = this.btnAbort;
+            this.ClientSize = new System.Drawing.Size(826, 531);
             this.Controls.Add(this.AutoCompletionCheckBox);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.StationBoarddataGridView);
@@ -163,7 +174,8 @@ namespace TransportApp
             this.Controls.Add(this.tbxDepartureStation);
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblStation);
-            this.MinimumSize = new System.Drawing.Size(565, 378);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(836, 551);
             this.Name = "DepartureList";
             this.Text = "Abfahrtstafel";
             ((System.ComponentModel.ISupportInitialize)(this.StationBoarddataGridView)).EndInit();
