@@ -291,7 +291,7 @@ namespace TransportApp
             // btnHome
             // 
             this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnHome.Image = global::TransportApp.Properties.Resources.Download;
+            this.btnHome.Image = global::TransportApp.Properties.Resources.Download1;
             this.btnHome.Location = new System.Drawing.Point(1286, 6);
             this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHome.Name = "btnHome";
