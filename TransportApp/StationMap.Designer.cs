@@ -50,8 +50,7 @@ namespace TransportApp
             this.StationgMapControl.GrayScaleMode = false;
             this.StationgMapControl.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow;
             this.StationgMapControl.LevelsKeepInMemmory = 5;
-            this.StationgMapControl.Location = new System.Drawing.Point(6, 92);
-            this.StationgMapControl.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.StationgMapControl.Location = new System.Drawing.Point(4, 60);
             this.StationgMapControl.MarkersEnabled = true;
             this.StationgMapControl.MaxZoom = 2;
             this.StationgMapControl.MinZoom = 2;
@@ -65,7 +64,7 @@ namespace TransportApp
             this.StationgMapControl.ScaleMode = GMap.NET.WindowsForms.ScaleModes.Integer;
             this.StationgMapControl.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.StationgMapControl.ShowTileGridLines = false;
-            this.StationgMapControl.Size = new System.Drawing.Size(1090, 617);
+            this.StationgMapControl.Size = new System.Drawing.Size(727, 401);
             this.StationgMapControl.TabIndex = 6;
             this.StationgMapControl.Zoom = 0D;
             // 
@@ -73,10 +72,9 @@ namespace TransportApp
             // 
             this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(1094, 12);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHome.Location = new System.Drawing.Point(729, 8);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(50, 48);
+            this.btnHome.Size = new System.Drawing.Size(33, 31);
             this.btnHome.TabIndex = 3;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
@@ -84,10 +82,9 @@ namespace TransportApp
             // btnAbort
             // 
             this.btnAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbort.Location = new System.Drawing.Point(1010, 735);
-            this.btnAbort.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnAbort.Location = new System.Drawing.Point(673, 478);
             this.btnAbort.Name = "btnAbort";
-            this.btnAbort.Size = new System.Drawing.Size(135, 37);
+            this.btnAbort.Size = new System.Drawing.Size(90, 24);
             this.btnAbort.TabIndex = 5;
             this.btnAbort.Text = "Abbruch";
             this.btnAbort.UseVisualStyleBackColor = true;
@@ -96,10 +93,9 @@ namespace TransportApp
             // btnReturn
             // 
             this.btnReturn.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnReturn.Location = new System.Drawing.Point(866, 735);
-            this.btnReturn.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnReturn.Location = new System.Drawing.Point(577, 478);
             this.btnReturn.Name = "btnReturn";
-            this.btnReturn.Size = new System.Drawing.Size(135, 37);
+            this.btnReturn.Size = new System.Drawing.Size(90, 24);
             this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Zurück";
             this.btnReturn.UseVisualStyleBackColor = true;
@@ -107,19 +103,17 @@ namespace TransportApp
             // 
             // tbxStation
             // 
-            this.tbxStation.Location = new System.Drawing.Point(96, 34);
-            this.tbxStation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbxStation.Location = new System.Drawing.Point(64, 22);
             this.tbxStation.Name = "tbxStation";
-            this.tbxStation.Size = new System.Drawing.Size(226, 26);
+            this.tbxStation.Size = new System.Drawing.Size(152, 20);
             this.tbxStation.TabIndex = 1;
             // 
             // btnSearch
             // 
             this.btnSearch.BackColor = System.Drawing.Color.DarkSeaGreen;
-            this.btnSearch.Location = new System.Drawing.Point(387, 18);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSearch.Location = new System.Drawing.Point(258, 12);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(222, 54);
+            this.btnSearch.Size = new System.Drawing.Size(148, 35);
             this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = false;
@@ -129,20 +123,17 @@ namespace TransportApp
             // 
             this.lblStation.AutoSize = true;
             this.lblStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStation.Location = new System.Drawing.Point(9, 35);
-            this.lblStation.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblStation.Location = new System.Drawing.Point(6, 23);
             this.lblStation.Name = "lblStation";
-            this.lblStation.Size = new System.Drawing.Size(79, 25);
+            this.lblStation.Size = new System.Drawing.Size(52, 16);
             this.lblStation.TabIndex = 7;
             this.lblStation.Text = "Station:";
             // 
             // StationMap
             // 
-            this.AcceptButton = this.btnSearch;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnAbort;
-            this.ClientSize = new System.Drawing.Size(1161, 791);
+            this.ClientSize = new System.Drawing.Size(774, 514);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnReturn);
@@ -150,8 +141,7 @@ namespace TransportApp
             this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.lblStation);
             this.Controls.Add(this.StationgMapControl);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.MinimumSize = new System.Drawing.Size(1172, 668);
+            this.MinimumSize = new System.Drawing.Size(789, 454);
             this.Name = "StationMap";
             this.Text = "Standort auf Karte anzeigen";
             this.Load += new System.EventHandler(this.StationMap_Load);

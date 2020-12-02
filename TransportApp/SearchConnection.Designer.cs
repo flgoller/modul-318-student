@@ -75,9 +75,11 @@ namespace TransportApp
             this.grpConnectionSearch.Controls.Add(this.lblDepartureStation);
             this.grpConnectionSearch.Controls.Add(this.btnSearchConnection);
             this.grpConnectionSearch.Controls.Add(this.tbxDeparture);
-            this.grpConnectionSearch.Location = new System.Drawing.Point(12, 12);
+            this.grpConnectionSearch.Location = new System.Drawing.Point(8, 8);
+            this.grpConnectionSearch.Margin = new System.Windows.Forms.Padding(2);
             this.grpConnectionSearch.Name = "grpConnectionSearch";
-            this.grpConnectionSearch.Size = new System.Drawing.Size(885, 175);
+            this.grpConnectionSearch.Padding = new System.Windows.Forms.Padding(2);
+            this.grpConnectionSearch.Size = new System.Drawing.Size(590, 114);
             this.grpConnectionSearch.TabIndex = 0;
             this.grpConnectionSearch.TabStop = false;
             this.grpConnectionSearch.Text = "Verbindung Suchen";
@@ -85,10 +87,9 @@ namespace TransportApp
             // AutoCompletecheckBox
             // 
             this.AutoCompletecheckBox.AutoSize = true;
-            this.AutoCompletecheckBox.Location = new System.Drawing.Point(772, 28);
-            this.AutoCompletecheckBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.AutoCompletecheckBox.Location = new System.Drawing.Point(515, 18);
             this.AutoCompletecheckBox.Name = "AutoCompletecheckBox";
-            this.AutoCompletecheckBox.Size = new System.Drawing.Size(101, 24);
+            this.AutoCompletecheckBox.Size = new System.Drawing.Size(70, 17);
             this.AutoCompletecheckBox.TabIndex = 7;
             this.AutoCompletecheckBox.Text = "Suchhilfe";
             this.AutoCompletecheckBox.UseVisualStyleBackColor = true;
@@ -97,59 +98,65 @@ namespace TransportApp
             // 
             this.lblDepartureTime.AutoSize = true;
             this.lblDepartureTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartureTime.Location = new System.Drawing.Point(8, 145);
+            this.lblDepartureTime.Location = new System.Drawing.Point(5, 94);
+            this.lblDepartureTime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartureTime.Name = "lblDepartureTime";
-            this.lblDepartureTime.Size = new System.Drawing.Size(121, 25);
+            this.lblDepartureTime.Size = new System.Drawing.Size(87, 17);
             this.lblDepartureTime.TabIndex = 7;
             this.lblDepartureTime.Text = "Abfahrtszeit:";
             // 
             // HoursnumericUpDown
             // 
-            this.HoursnumericUpDown.Location = new System.Drawing.Point(142, 143);
+            this.HoursnumericUpDown.Location = new System.Drawing.Point(95, 93);
+            this.HoursnumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.HoursnumericUpDown.Maximum = new decimal(new int[] {
             23,
             0,
             0,
             0});
             this.HoursnumericUpDown.Name = "HoursnumericUpDown";
-            this.HoursnumericUpDown.Size = new System.Drawing.Size(75, 26);
+            this.HoursnumericUpDown.Size = new System.Drawing.Size(50, 20);
             this.HoursnumericUpDown.TabIndex = 2;
             // 
             // MinutesnumericUpDown
             // 
-            this.MinutesnumericUpDown.Location = new System.Drawing.Point(219, 143);
+            this.MinutesnumericUpDown.Location = new System.Drawing.Point(146, 93);
+            this.MinutesnumericUpDown.Margin = new System.Windows.Forms.Padding(2);
             this.MinutesnumericUpDown.Maximum = new decimal(new int[] {
             59,
             0,
             0,
             0});
             this.MinutesnumericUpDown.Name = "MinutesnumericUpDown";
-            this.MinutesnumericUpDown.Size = new System.Drawing.Size(75, 26);
+            this.MinutesnumericUpDown.Size = new System.Drawing.Size(50, 20);
             this.MinutesnumericUpDown.TabIndex = 3;
             // 
             // btnChange
             // 
             this.btnChange.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnChange.Image = ((System.Drawing.Image)(resources.GetObject("btnChange.Image")));
-            this.btnChange.Location = new System.Drawing.Point(244, 82);
+            this.btnChange.Location = new System.Drawing.Point(163, 53);
+            this.btnChange.Margin = new System.Windows.Forms.Padding(2);
             this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(50, 42);
+            this.btnChange.Size = new System.Drawing.Size(33, 27);
             this.btnChange.TabIndex = 6;
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
             // SearchdateTimePicker
             // 
-            this.SearchdateTimePicker.Location = new System.Drawing.Point(300, 143);
+            this.SearchdateTimePicker.Location = new System.Drawing.Point(200, 93);
+            this.SearchdateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.SearchdateTimePicker.Name = "SearchdateTimePicker";
-            this.SearchdateTimePicker.Size = new System.Drawing.Size(200, 26);
+            this.SearchdateTimePicker.Size = new System.Drawing.Size(135, 20);
             this.SearchdateTimePicker.TabIndex = 4;
             // 
             // tbxArrival
             // 
-            this.tbxArrival.Location = new System.Drawing.Point(352, 88);
+            this.tbxArrival.Location = new System.Drawing.Point(235, 57);
+            this.tbxArrival.Margin = new System.Windows.Forms.Padding(2);
             this.tbxArrival.Name = "tbxArrival";
-            this.tbxArrival.Size = new System.Drawing.Size(172, 26);
+            this.tbxArrival.Size = new System.Drawing.Size(116, 20);
             this.tbxArrival.TabIndex = 1;
             this.tbxArrival.TextChanged += new System.EventHandler(this.tbxArrival_TextChanged);
             // 
@@ -157,9 +164,10 @@ namespace TransportApp
             // 
             this.lblArrivalStation.AutoSize = true;
             this.lblArrivalStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblArrivalStation.Location = new System.Drawing.Point(348, 45);
+            this.lblArrivalStation.Location = new System.Drawing.Point(232, 29);
+            this.lblArrivalStation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblArrivalStation.Name = "lblArrivalStation";
-            this.lblArrivalStation.Size = new System.Drawing.Size(115, 26);
+            this.lblArrivalStation.Size = new System.Drawing.Size(78, 18);
             this.lblArrivalStation.TabIndex = 2;
             this.lblArrivalStation.Text = "Endstation";
             // 
@@ -167,9 +175,10 @@ namespace TransportApp
             // 
             this.lblDepartureStation.AutoSize = true;
             this.lblDepartureStation.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDepartureStation.Location = new System.Drawing.Point(6, 45);
+            this.lblDepartureStation.Location = new System.Drawing.Point(4, 29);
+            this.lblDepartureStation.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDepartureStation.Name = "lblDepartureStation";
-            this.lblDepartureStation.Size = new System.Drawing.Size(157, 26);
+            this.lblDepartureStation.Size = new System.Drawing.Size(106, 18);
             this.lblDepartureStation.TabIndex = 1;
             this.lblDepartureStation.Text = "Abfahrtsstation";
             // 
@@ -177,9 +186,10 @@ namespace TransportApp
             // 
             this.btnSearchConnection.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnSearchConnection.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnSearchConnection.Location = new System.Drawing.Point(615, 82);
+            this.btnSearchConnection.Location = new System.Drawing.Point(410, 53);
+            this.btnSearchConnection.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchConnection.Name = "btnSearchConnection";
-            this.btnSearchConnection.Size = new System.Drawing.Size(222, 54);
+            this.btnSearchConnection.Size = new System.Drawing.Size(148, 35);
             this.btnSearchConnection.TabIndex = 5;
             this.btnSearchConnection.Text = "Verbindungen Suchen";
             this.btnSearchConnection.UseVisualStyleBackColor = false;
@@ -187,18 +197,20 @@ namespace TransportApp
             // 
             // tbxDeparture
             // 
-            this.tbxDeparture.Location = new System.Drawing.Point(10, 88);
+            this.tbxDeparture.Location = new System.Drawing.Point(7, 57);
+            this.tbxDeparture.Margin = new System.Windows.Forms.Padding(2);
             this.tbxDeparture.Name = "tbxDeparture";
-            this.tbxDeparture.Size = new System.Drawing.Size(175, 26);
+            this.tbxDeparture.Size = new System.Drawing.Size(118, 20);
             this.tbxDeparture.TabIndex = 0;
             this.tbxDeparture.TextChanged += new System.EventHandler(this.tbxDeparture_TextChanged);
             // 
             // btnSearchConnectionBack
             // 
             this.btnSearchConnectionBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchConnectionBack.Location = new System.Drawing.Point(1122, 565);
+            this.btnSearchConnectionBack.Location = new System.Drawing.Point(748, 367);
+            this.btnSearchConnectionBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchConnectionBack.Name = "btnSearchConnectionBack";
-            this.btnSearchConnectionBack.Size = new System.Drawing.Size(96, 32);
+            this.btnSearchConnectionBack.Size = new System.Drawing.Size(64, 21);
             this.btnSearchConnectionBack.TabIndex = 10;
             this.btnSearchConnectionBack.Text = "Zurück";
             this.btnSearchConnectionBack.UseVisualStyleBackColor = true;
@@ -207,9 +219,10 @@ namespace TransportApp
             // btnSearchConnectionAbort
             // 
             this.btnSearchConnectionAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSearchConnectionAbort.Location = new System.Drawing.Point(1240, 565);
+            this.btnSearchConnectionAbort.Location = new System.Drawing.Point(827, 367);
+            this.btnSearchConnectionAbort.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchConnectionAbort.Name = "btnSearchConnectionAbort";
-            this.btnSearchConnectionAbort.Size = new System.Drawing.Size(96, 32);
+            this.btnSearchConnectionAbort.Size = new System.Drawing.Size(64, 21);
             this.btnSearchConnectionAbort.TabIndex = 11;
             this.btnSearchConnectionAbort.Text = "Abbruch";
             this.btnSearchConnectionAbort.UseVisualStyleBackColor = true;
@@ -220,9 +233,10 @@ namespace TransportApp
             this.btnMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMail.Image = ((System.Drawing.Image)(resources.GetObject("btnMail.Image")));
-            this.btnMail.Location = new System.Drawing.Point(1222, 6);
+            this.btnMail.Location = new System.Drawing.Point(815, 4);
+            this.btnMail.Margin = new System.Windows.Forms.Padding(2);
             this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(56, 48);
+            this.btnMail.Size = new System.Drawing.Size(37, 31);
             this.btnMail.TabIndex = 8;
             this.btnMail.UseVisualStyleBackColor = true;
             this.btnMail.Click += new System.EventHandler(this.btnMail_click);
@@ -242,12 +256,13 @@ namespace TransportApp
             this.ArrivalTime,
             this.Duration,
             this.Delay});
-            this.ConnectionSelectiondataGridView.Location = new System.Drawing.Point(12, 205);
+            this.ConnectionSelectiondataGridView.Location = new System.Drawing.Point(8, 133);
+            this.ConnectionSelectiondataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ConnectionSelectiondataGridView.Name = "ConnectionSelectiondataGridView";
             this.ConnectionSelectiondataGridView.ReadOnly = true;
             this.ConnectionSelectiondataGridView.RowHeadersWidth = 62;
             this.ConnectionSelectiondataGridView.RowTemplate.Height = 28;
-            this.ConnectionSelectiondataGridView.Size = new System.Drawing.Size(1269, 274);
+            this.ConnectionSelectiondataGridView.Size = new System.Drawing.Size(846, 178);
             this.ConnectionSelectiondataGridView.TabIndex = 9;
             // 
             // BusTrainNumber
@@ -302,28 +317,26 @@ namespace TransportApp
             // btnHome
             // 
             this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
-            this.btnHome.Location = new System.Drawing.Point(1286, 6);
-            this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnHome.Location = new System.Drawing.Point(857, 4);
             this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(50, 48);
+            this.btnHome.Size = new System.Drawing.Size(33, 31);
             this.btnHome.TabIndex = 9;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
             // SearchConnection
             // 
-            this.AcceptButton = this.btnSearchConnection;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.CancelButton = this.btnSearchConnectionAbort;
-            this.ClientSize = new System.Drawing.Size(1353, 614);
+            this.ClientSize = new System.Drawing.Size(902, 399);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.ConnectionSelectiondataGridView);
             this.Controls.Add(this.btnMail);
             this.Controls.Add(this.btnSearchConnectionAbort);
             this.Controls.Add(this.btnSearchConnectionBack);
             this.Controls.Add(this.grpConnectionSearch);
-            this.MinimumSize = new System.Drawing.Size(1366, 644);
+            this.Margin = new System.Windows.Forms.Padding(2);
+            this.MinimumSize = new System.Drawing.Size(918, 438);
             this.Name = "SearchConnection";
             this.Text = "Verbindungen";
             this.Load += new System.EventHandler(this.OnFormLoad);
