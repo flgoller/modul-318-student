@@ -1,5 +1,6 @@
 ﻿using SwissTransport;
 using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace TransportApp
@@ -12,6 +13,16 @@ namespace TransportApp
         public DepartureList()
         {
             InitializeComponent();
+            try
+            {
+                tbxDepartureStation.AutoCompleteMode = AutoCompleteMode.Suggest;
+                tbxDepartureStation.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            }
+            catch
+            {
+                Exception ex = new Exception();
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void btnReturn_Click(object sender, EventArgs e)
@@ -74,6 +85,58 @@ namespace TransportApp
             MainMenu frm = new MainMenu();                          // Objekt von MainMenu erstellen:
             frm.Show();                                             // MainMenu anzeigen
             this.Hide();    
+        }
+
+        private void tbxDepartureStation_TextChanged(object sender, EventArgs e)
+        {
+            if (tbxDepartureStation.Text.Length >= 1 && tbxDepartureStation.Text != " ")              // AutoComplition vom Feld Ankunftsort
+            {
+                List<string> temp = new List<string>();
+                foreach (var station in _transport.GetStations(tbxDepartureStation.Text).StationList)
+                {
+                    try
+                    {
+                        temp.Add(station.Name);
+                    }
+                    catch
+                    {
+                        Exception ex = new Exception();
+                        MessageBox.Show(ex.ToString());
+                    }
+                   
+                }
+                if (AutoCompletionCheckBox.Checked == true)
+                {
+                    try
+                    {
+                        var autoComplete = new AutoCompleteStringCollection();
+                        autoComplete.AddRange(temp.ToArray());
+                        tbxDepartureStation.AutoCompleteCustomSource = autoComplete;
+                    }
+                    catch
+                    {
+                        Exception ex = new Exception();
+                        MessageBox.Show(ex.ToString());
+                    }
+                    
+                }
+                else
+                {
+                    try
+                    {
+                        var autoComplete = new AutoCompleteStringCollection();
+                        autoComplete.Clear();
+                        tbxDepartureStation.AutoCompleteCustomSource = autoComplete;
+                    }
+                    catch
+                    {
+                        Exception ex = new Exception();
+                        MessageBox.Show(ex.ToString());
+                    }
+                   
+                }
+
+            }
         }
     }
 }

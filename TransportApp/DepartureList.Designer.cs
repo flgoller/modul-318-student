@@ -40,6 +40,7 @@ namespace TransportApp
             this.ArrivalStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Vehicle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHome = new System.Windows.Forms.Button();
+            this.AutoCompletionCheckBox = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.StationBoarddataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,6 +71,7 @@ namespace TransportApp
             this.tbxDepartureStation.Name = "tbxDepartureStation";
             this.tbxDepartureStation.Size = new System.Drawing.Size(152, 20);
             this.tbxDepartureStation.TabIndex = 0;
+            this.tbxDepartureStation.TextChanged += new System.EventHandler(this.tbxDepartureStation_TextChanged);
             // 
             // btnReturn
             // 
@@ -138,11 +140,22 @@ namespace TransportApp
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
+            // AutoCompletionCheckBox
+            // 
+            this.AutoCompletionCheckBox.AutoSize = true;
+            this.AutoCompletionCheckBox.Location = new System.Drawing.Point(70, 82);
+            this.AutoCompletionCheckBox.Name = "AutoCompletionCheckBox";
+            this.AutoCompletionCheckBox.Size = new System.Drawing.Size(70, 17);
+            this.AutoCompletionCheckBox.TabIndex = 6;
+            this.AutoCompletionCheckBox.Text = "Suchhilfe";
+            this.AutoCompletionCheckBox.UseVisualStyleBackColor = true;
+            // 
             // DepartureList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(551, 345);
+            this.Controls.Add(this.AutoCompletionCheckBox);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.StationBoarddataGridView);
             this.Controls.Add(this.btnAbort);
@@ -171,5 +184,6 @@ namespace TransportApp
         private System.Windows.Forms.DataGridViewTextBoxColumn ArrivalStation;
         private System.Windows.Forms.DataGridViewTextBoxColumn Vehicle;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.CheckBox AutoCompletionCheckBox;
     }
 }

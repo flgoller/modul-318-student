@@ -48,6 +48,7 @@ namespace TransportApp
             this.btnHome = new System.Windows.Forms.Button();
             this.btnAbort = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
+            this.btnMail = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.fileSystemWatcher1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NearbyStationdataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ConnectionSelectiondataGridView)).BeginInit();
@@ -226,11 +227,25 @@ namespace TransportApp
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
+            // btnMail
+            // 
+            this.btnMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMail.Image = ((System.Drawing.Image)(resources.GetObject("btnMail.Image")));
+            this.btnMail.Location = new System.Drawing.Point(704, 14);
+            this.btnMail.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMail.Name = "btnMail";
+            this.btnMail.Size = new System.Drawing.Size(37, 31);
+            this.btnMail.TabIndex = 9;
+            this.btnMail.UseVisualStyleBackColor = true;
+            this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
+            // 
             // NearbyStation
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(791, 500);
+            this.Controls.Add(this.btnMail);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnBack);
@@ -267,5 +282,6 @@ namespace TransportApp
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnAbort;
         private System.Windows.Forms.Button btnBack;
+        private System.Windows.Forms.Button btnMail;
     }
 }

@@ -82,16 +82,25 @@ namespace TransportApp
                 DateTime DateArrival = Convert.ToDateTime(connection.To.Arrival);
                 DateTime InputDateTime = Convert.ToDateTime(SearchdateTimePicker.Value);
                 string xCoordinate = connection.From.Station.Coordinate.ToString();
-
-                     if(connection.From.Delay == null)
-                     {
-                          connection.From.Delay = 0;
-                     }
-
+                string Platform = "";
+                if (connection.From.Platform != null)
+                {
+                    Platform = connection.From.Platform.ToString();
+                }
+                else
+                {
+                    Platform = "Keine Angabe";
+                }
+              
+                if(connection.From.Delay == null)
+                {
+                     connection.From.Delay = 0;
+                }
+                    
                      if (i <= 4)
                      {
                           ConnectionSelectiondataGridView.Rows.Add(
-                          connection.From.Platform,
+                          Platform,
                           connection.From.Station.Name,
                           connection.To.Station.Name,
                           DateDeparture,
