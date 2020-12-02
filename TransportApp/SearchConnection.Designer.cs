@@ -44,7 +44,6 @@ namespace TransportApp
             this.tbxDeparture = new System.Windows.Forms.TextBox();
             this.btnSearchConnectionBack = new System.Windows.Forms.Button();
             this.btnSearchConnectionAbort = new System.Windows.Forms.Button();
-            this.btnMail = new System.Windows.Forms.Button();
             this.ConnectionSelectiondataGridView = new System.Windows.Forms.DataGridView();
             this.BusTrainNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DepartureStation = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +53,7 @@ namespace TransportApp
             this.Duration = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Delay = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnHome = new System.Windows.Forms.Button();
+            this.btnMail = new System.Windows.Forms.Button();
             this.grpConnectionSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.HoursnumericUpDown)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.MinutesnumericUpDown)).BeginInit();
@@ -77,7 +77,7 @@ namespace TransportApp
             this.grpConnectionSearch.Controls.Add(this.tbxDeparture);
             this.grpConnectionSearch.Location = new System.Drawing.Point(12, 12);
             this.grpConnectionSearch.Name = "grpConnectionSearch";
-            this.grpConnectionSearch.Size = new System.Drawing.Size(885, 175);
+            this.grpConnectionSearch.Size = new System.Drawing.Size(967, 175);
             this.grpConnectionSearch.TabIndex = 0;
             this.grpConnectionSearch.TabStop = false;
             this.grpConnectionSearch.Text = "Verbindung Suchen";
@@ -207,6 +207,7 @@ namespace TransportApp
             // btnSearchConnectionAbort
             // 
             this.btnSearchConnectionAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSearchConnectionAbort.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnSearchConnectionAbort.Location = new System.Drawing.Point(1240, 565);
             this.btnSearchConnectionAbort.Name = "btnSearchConnectionAbort";
             this.btnSearchConnectionAbort.Size = new System.Drawing.Size(96, 32);
@@ -214,18 +215,6 @@ namespace TransportApp
             this.btnSearchConnectionAbort.Text = "Abbruch";
             this.btnSearchConnectionAbort.UseVisualStyleBackColor = true;
             this.btnSearchConnectionAbort.Click += new System.EventHandler(this.btnSearchConnectionAbort_Click);
-            // 
-            // btnMail
-            // 
-            this.btnMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMail.Image = ((System.Drawing.Image)(resources.GetObject("btnMail.Image")));
-            this.btnMail.Location = new System.Drawing.Point(1222, 6);
-            this.btnMail.Name = "btnMail";
-            this.btnMail.Size = new System.Drawing.Size(56, 48);
-            this.btnMail.TabIndex = 8;
-            this.btnMail.UseVisualStyleBackColor = true;
-            this.btnMail.Click += new System.EventHandler(this.btnMail_click);
             // 
             // ConnectionSelectiondataGridView
             // 
@@ -301,7 +290,8 @@ namespace TransportApp
             // 
             // btnHome
             // 
-            this.btnHome.Image = ((System.Drawing.Image)(resources.GetObject("btnHome.Image")));
+            this.btnHome.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnHome.Image = global::TransportApp.Properties.Resources.Download;
             this.btnHome.Location = new System.Drawing.Point(1286, 6);
             this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHome.Name = "btnHome";
@@ -309,6 +299,18 @@ namespace TransportApp
             this.btnHome.TabIndex = 9;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
+            // 
+            // btnMail
+            // 
+            this.btnMail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMail.Font = new System.Drawing.Font("Microsoft Sans Serif", 5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMail.Image = ((System.Drawing.Image)(resources.GetObject("btnMail.Image")));
+            this.btnMail.Location = new System.Drawing.Point(1222, 6);
+            this.btnMail.Name = "btnMail";
+            this.btnMail.Size = new System.Drawing.Size(56, 48);
+            this.btnMail.TabIndex = 8;
+            this.btnMail.UseVisualStyleBackColor = true;
+            this.btnMail.Click += new System.EventHandler(this.btnMail_click);
             // 
             // SearchConnection
             // 
@@ -323,7 +325,7 @@ namespace TransportApp
             this.Controls.Add(this.btnSearchConnectionAbort);
             this.Controls.Add(this.btnSearchConnectionBack);
             this.Controls.Add(this.grpConnectionSearch);
-            this.MinimumSize = new System.Drawing.Size(1366, 644);
+            this.MinimumSize = new System.Drawing.Size(1375, 670);
             this.Name = "SearchConnection";
             this.Text = "Verbindungen";
             this.Load += new System.EventHandler(this.OnFormLoad);
