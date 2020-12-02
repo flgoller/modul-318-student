@@ -65,7 +65,7 @@ namespace TransportApp
             this.StationgMapControl.SelectedAreaFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(65)))), ((int)(((byte)(105)))), ((int)(((byte)(225)))));
             this.StationgMapControl.ShowTileGridLines = false;
             this.StationgMapControl.Size = new System.Drawing.Size(727, 401);
-            this.StationgMapControl.TabIndex = 0;
+            this.StationgMapControl.TabIndex = 6;
             this.StationgMapControl.Zoom = 0D;
             // 
             // btnHome
@@ -75,7 +75,7 @@ namespace TransportApp
             this.btnHome.Location = new System.Drawing.Point(729, 8);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(33, 31);
-            this.btnHome.TabIndex = 12;
+            this.btnHome.TabIndex = 3;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -85,7 +85,7 @@ namespace TransportApp
             this.btnAbort.Location = new System.Drawing.Point(673, 478);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(90, 24);
-            this.btnAbort.TabIndex = 11;
+            this.btnAbort.TabIndex = 5;
             this.btnAbort.Text = "Abbruch";
             this.btnAbort.UseVisualStyleBackColor = true;
             this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
@@ -96,7 +96,7 @@ namespace TransportApp
             this.btnReturn.Location = new System.Drawing.Point(577, 478);
             this.btnReturn.Name = "btnReturn";
             this.btnReturn.Size = new System.Drawing.Size(90, 24);
-            this.btnReturn.TabIndex = 10;
+            this.btnReturn.TabIndex = 4;
             this.btnReturn.Text = "Zurück";
             this.btnReturn.UseVisualStyleBackColor = true;
             this.btnReturn.Click += new System.EventHandler(this.btnReturn_Click);
@@ -106,7 +106,7 @@ namespace TransportApp
             this.tbxStation.Location = new System.Drawing.Point(64, 22);
             this.tbxStation.Name = "tbxStation";
             this.tbxStation.Size = new System.Drawing.Size(152, 20);
-            this.tbxStation.TabIndex = 9;
+            this.tbxStation.TabIndex = 1;
             // 
             // btnSearch
             // 
@@ -114,7 +114,7 @@ namespace TransportApp
             this.btnSearch.Location = new System.Drawing.Point(258, 12);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(148, 35);
-            this.btnSearch.TabIndex = 8;
+            this.btnSearch.TabIndex = 2;
             this.btnSearch.Text = "Suchen";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.tbxSearch_Click);

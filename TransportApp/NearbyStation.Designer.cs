@@ -74,7 +74,7 @@ namespace TransportApp
             this.NearbyStationdataGridView.ReadOnly = true;
             this.NearbyStationdataGridView.RowHeadersWidth = 62;
             this.NearbyStationdataGridView.Size = new System.Drawing.Size(553, 174);
-            this.NearbyStationdataGridView.TabIndex = 1;
+            this.NearbyStationdataGridView.TabIndex = 3;
             // 
             // yourGps
             // 
@@ -103,7 +103,7 @@ namespace TransportApp
             this.btnSearch.Location = new System.Drawing.Point(19, 27);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(148, 35);
-            this.btnSearch.TabIndex = 9;
+            this.btnSearch.TabIndex = 1;
             this.btnSearch.Text = "Suche nach Stationen";
             this.btnSearch.UseVisualStyleBackColor = false;
             this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
@@ -114,7 +114,7 @@ namespace TransportApp
             this.btnTakeMeHome.Location = new System.Drawing.Point(209, 27);
             this.btnTakeMeHome.Name = "btnTakeMeHome";
             this.btnTakeMeHome.Size = new System.Drawing.Size(148, 35);
-            this.btnTakeMeHome.TabIndex = 10;
+            this.btnTakeMeHome.TabIndex = 2;
             this.btnTakeMeHome.Text = "Take Me Home";
             this.btnTakeMeHome.UseVisualStyleBackColor = false;
             this.btnTakeMeHome.Click += new System.EventHandler(this.btnTakeMeHome_Click);
@@ -135,13 +135,13 @@ namespace TransportApp
             this.Duration,
             this.Delay});
             this.ConnectionSelectiondataGridView.Location = new System.Drawing.Point(19, 224);
-            this.ConnectionSelectiondataGridView.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ConnectionSelectiondataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ConnectionSelectiondataGridView.Name = "ConnectionSelectiondataGridView";
             this.ConnectionSelectiondataGridView.ReadOnly = true;
             this.ConnectionSelectiondataGridView.RowHeadersWidth = 62;
             this.ConnectionSelectiondataGridView.RowTemplate.Height = 28;
             this.ConnectionSelectiondataGridView.Size = new System.Drawing.Size(761, 166);
-            this.ConnectionSelectiondataGridView.TabIndex = 11;
+            this.ConnectionSelectiondataGridView.TabIndex = 4;
             // 
             // BusTrainNumber
             // 
@@ -198,7 +198,7 @@ namespace TransportApp
             this.btnHome.Location = new System.Drawing.Point(746, 12);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(33, 31);
-            this.btnHome.TabIndex = 14;
+            this.btnHome.TabIndex = 5;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -209,7 +209,7 @@ namespace TransportApp
             this.btnAbort.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(64, 21);
-            this.btnAbort.TabIndex = 13;
+            this.btnAbort.TabIndex = 7;
             this.btnAbort.Text = "Abbruch";
             this.btnAbort.UseVisualStyleBackColor = true;
             this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
@@ -221,7 +221,7 @@ namespace TransportApp
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(64, 21);
-            this.btnBack.TabIndex = 12;
+            this.btnBack.TabIndex = 6;
             this.btnBack.Text = "Zurück";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
