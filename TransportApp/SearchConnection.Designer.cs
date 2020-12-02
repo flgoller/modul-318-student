@@ -116,7 +116,7 @@ namespace TransportApp
             0});
             this.HoursnumericUpDown.Name = "HoursnumericUpDown";
             this.HoursnumericUpDown.Size = new System.Drawing.Size(50, 20);
-            this.HoursnumericUpDown.TabIndex = 3;
+            this.HoursnumericUpDown.TabIndex = 2;
             // 
             // MinutesnumericUpDown
             // 
@@ -129,7 +129,7 @@ namespace TransportApp
             0});
             this.MinutesnumericUpDown.Name = "MinutesnumericUpDown";
             this.MinutesnumericUpDown.Size = new System.Drawing.Size(50, 20);
-            this.MinutesnumericUpDown.TabIndex = 4;
+            this.MinutesnumericUpDown.TabIndex = 3;
             // 
             // btnChange
             // 
@@ -139,7 +139,7 @@ namespace TransportApp
             this.btnChange.Margin = new System.Windows.Forms.Padding(2);
             this.btnChange.Name = "btnChange";
             this.btnChange.Size = new System.Drawing.Size(33, 27);
-            this.btnChange.TabIndex = 1;
+            this.btnChange.TabIndex = 6;
             this.btnChange.UseVisualStyleBackColor = true;
             this.btnChange.Click += new System.EventHandler(this.btnChange_Click);
             // 
@@ -149,7 +149,7 @@ namespace TransportApp
             this.SearchdateTimePicker.Margin = new System.Windows.Forms.Padding(2);
             this.SearchdateTimePicker.Name = "SearchdateTimePicker";
             this.SearchdateTimePicker.Size = new System.Drawing.Size(135, 20);
-            this.SearchdateTimePicker.TabIndex = 5;
+            this.SearchdateTimePicker.TabIndex = 4;
             // 
             // tbxArrival
             // 
@@ -157,7 +157,7 @@ namespace TransportApp
             this.tbxArrival.Margin = new System.Windows.Forms.Padding(2);
             this.tbxArrival.Name = "tbxArrival";
             this.tbxArrival.Size = new System.Drawing.Size(116, 20);
-            this.tbxArrival.TabIndex = 2;
+            this.tbxArrival.TabIndex = 1;
             this.tbxArrival.TextChanged += new System.EventHandler(this.tbxArrival_TextChanged);
             // 
             // lblArrivalStation
@@ -190,7 +190,7 @@ namespace TransportApp
             this.btnSearchConnection.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchConnection.Name = "btnSearchConnection";
             this.btnSearchConnection.Size = new System.Drawing.Size(148, 35);
-            this.btnSearchConnection.TabIndex = 6;
+            this.btnSearchConnection.TabIndex = 5;
             this.btnSearchConnection.Text = "Verbindungen Suchen";
             this.btnSearchConnection.UseVisualStyleBackColor = false;
             this.btnSearchConnection.Click += new System.EventHandler(this.btnSearchConnection_Click);
