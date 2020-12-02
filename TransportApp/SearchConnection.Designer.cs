@@ -336,7 +336,7 @@ namespace TransportApp
             this.Controls.Add(this.btnSearchConnectionBack);
             this.Controls.Add(this.grpConnectionSearch);
             this.Margin = new System.Windows.Forms.Padding(2);
-            this.MinimumSize = new System.Drawing.Size(855, 426);
+            this.MinimumSize = new System.Drawing.Size(918, 438);
             this.Name = "SearchConnection";
             this.Text = "Verbindungen";
             this.Load += new System.EventHandler(this.OnFormLoad);

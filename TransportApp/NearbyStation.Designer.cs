@@ -73,7 +73,7 @@ namespace TransportApp
             this.NearbyStationdataGridView.Name = "NearbyStationdataGridView";
             this.NearbyStationdataGridView.ReadOnly = true;
             this.NearbyStationdataGridView.RowHeadersWidth = 62;
-            this.NearbyStationdataGridView.Size = new System.Drawing.Size(553, 174);
+            this.NearbyStationdataGridView.Size = new System.Drawing.Size(552, 175);
             this.NearbyStationdataGridView.TabIndex = 3;
             // 
             // yourGps
@@ -134,13 +134,13 @@ namespace TransportApp
             this.ArrivalTime,
             this.Duration,
             this.Delay});
-            this.ConnectionSelectiondataGridView.Location = new System.Drawing.Point(19, 224);
+            this.ConnectionSelectiondataGridView.Location = new System.Drawing.Point(19, 260);
             this.ConnectionSelectiondataGridView.Margin = new System.Windows.Forms.Padding(2);
             this.ConnectionSelectiondataGridView.Name = "ConnectionSelectiondataGridView";
             this.ConnectionSelectiondataGridView.ReadOnly = true;
             this.ConnectionSelectiondataGridView.RowHeadersWidth = 62;
             this.ConnectionSelectiondataGridView.RowTemplate.Height = 28;
-            this.ConnectionSelectiondataGridView.Size = new System.Drawing.Size(761, 166);
+            this.ConnectionSelectiondataGridView.Size = new System.Drawing.Size(760, 204);
             this.ConnectionSelectiondataGridView.TabIndex = 4;
             // 
             // BusTrainNumber
@@ -205,7 +205,7 @@ namespace TransportApp
             // btnAbort
             // 
             this.btnAbort.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAbort.Location = new System.Drawing.Point(717, 394);
+            this.btnAbort.Location = new System.Drawing.Point(716, 468);
             this.btnAbort.Margin = new System.Windows.Forms.Padding(2);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(64, 21);
@@ -217,7 +217,7 @@ namespace TransportApp
             // btnBack
             // 
             this.btnBack.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnBack.Location = new System.Drawing.Point(638, 394);
+            this.btnBack.Location = new System.Drawing.Point(637, 468);
             this.btnBack.Margin = new System.Windows.Forms.Padding(2);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(64, 21);
@@ -230,7 +230,7 @@ namespace TransportApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(792, 426);
+            this.ClientSize = new System.Drawing.Size(791, 500);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.btnAbort);
             this.Controls.Add(this.btnBack);
