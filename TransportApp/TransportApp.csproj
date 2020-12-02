@@ -80,6 +80,7 @@
     <Compile Include="SearchConnection.Designer.cs">
       <DependentUpon>SearchConnection.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransportAppValidtaion.cs" />
     <Compile Include="StationMap.cs">
       <SubType>Form</SubType>
     </Compile>

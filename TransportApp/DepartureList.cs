@@ -1,19 +1,14 @@
 ﻿using SwissTransport;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace TransportApp
 {
     public partial class DepartureList : Form
     {
-        private ITransport _transport = new Transport();            //Instanz der Transport Klasse erstellen
+        private ITransport _transport = new Transport();                                          // Instanz der Transport Klasse erstellen
+        TransportApp.StationExists _stationExists = new TransportApp.StationExists();             // Von eigener Klasse ein Objekt stationexists erzeugen
+
         public DepartureList()
         {
             InitializeComponent();
@@ -33,11 +28,11 @@ namespace TransportApp
 
         private void tbxSearch_Click(object sender, EventArgs e)
         {
-            if(tbxDepartureStation.Text != "")
+            if(tbxDepartureStation.Text != "")                                                        // Validation der Station
             {
-                if (StationExists(tbxDepartureStation.Text))
+                if (_stationExists.Station(tbxDepartureStation.Text))                  
                 {
-                    StationBoardRoot stationBoardRoot = new StationBoardRoot();
+                    StationBoardRoot stationBoardRoot = new StationBoardRoot();                       // Wert der eingegebener Station der Funktion "GetStationBoard" übergeben
                     stationBoardRoot = _transport.GetStationBoard(tbxDepartureStation.Text, "");
                     FillDataGridView(stationBoardRoot);
                 }
@@ -52,25 +47,11 @@ namespace TransportApp
             }
         
         }
-        private bool StationExists(string StationName)
-        {
-            Stations stations = new Stations();
-            stations = _transport.GetStations(StationName);
-            foreach (Station station in stations.StationList)
-            {
-                if (station.Name == StationName)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
 
         private void FillDataGridView(StationBoardRoot stationBoardRoot)
         {
             StationBoarddataGridView.Rows.Clear();
-            foreach (StationBoard stationBoard in stationBoardRoot.Entries)
+            foreach (StationBoard stationBoard in stationBoardRoot.Entries)                         // Die erhaltenen Stationen ins DataGridView füllen
             {
                 StationBoarddataGridView.Rows.Add(
                     tbxDepartureStation.Text,
@@ -82,9 +63,9 @@ namespace TransportApp
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            MainMenu frm = new MainMenu();      // Objekt von MainMenu erstellen:
-            frm.Show();                         // MainMenu anzeigen
-            this.Hide();
+            MainMenu frm = new MainMenu();                          // Objekt von MainMenu erstellen:
+            frm.Show();                                             // MainMenu anzeigen
+            this.Hide();    
         }
     }
 }

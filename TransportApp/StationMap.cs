@@ -1,12 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Device.Location;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using GMap.NET;
 using GMap.NET.MapProviders;
@@ -18,37 +11,46 @@ namespace TransportApp
 {
     public partial class StationMap : Form
     {
-        private ITransport _Itransport = new Transport();            //Instanz der Transport Klasse erstellen
-        StationBoardRoot stationBoard = new StationBoardRoot();                            //Neues Objekt station der Klase Station erstellen
-        GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();
-        Transport _transport = new Transport();
+        GeoCoordinateWatcher _watcher = new GeoCoordinateWatcher();                         // Objekt für Standortbestimmung erzeugen
+        Transport _transport = new Transport();                                             // Objekt von der Klasse Transport erstellen
+        TransportApp.StationExists _stationExists = new TransportApp.StationExists();       // Objekt von eigener Klasse TransportApp erstellen
 
-        GMarkerGoogle marker;
-        GMapOverlay markerOverlay;
-        DataTable dt;
+        private double x = 0.0;                                                             // Globale variable für Breiten- und Längengrad
+        private double y = 0.0;
 
-        int fileSelection = 0;
-        double LatInicial = 20.9688132813906;
-        double LngInicial = -89.6250915527344;
+
 
         public StationMap()
         {
             InitializeComponent();
-            watcher.Start();
+            _watcher.Start();                                                               // Startet den Watcher beim Starten des Forms
         }
 
         private void StationMap_Load(object sender, EventArgs e)
         {
-          if (watcher.Position.Location.IsUnknown)
+          if (_watcher.Position.Location.IsUnknown)
           {
-            MessageBox.Show("Aktueller Standort nicht gefunden");
-            Close();
-          }
+            MessageBox.Show("Aktueller Standort nicht gefunden");                           // Beim öffnen der Karte wird eine Fehlermeldung angezeigt und die Position auf der Karte wird auf die Firma gesetzt, falls dein Standort nicht bestummen werden konte
+
+             x = 47.1;
+             y = 8.1;
+
+             StationgMapControl.DragButton = MouseButtons.Left;
+             StationgMapControl.CanDragMap = true;
+             StationgMapControl.MapProvider = GMapProviders.GoogleMap;
+             StationgMapControl.Position = new PointLatLng(x, y);
+             StationgMapControl.MinZoom = 0;
+             StationgMapControl.MaxZoom = 24;
+             StationgMapControl.Zoom = 10;
+             StationgMapControl.AutoScroll = true;
+
+             StationgMapControl.Position = new PointLatLng(x, y);
+            }
 
           else
           {
-            double x = watcher.Position.Location.Latitude;
-            double y = watcher.Position.Location.Longitude;
+            x = _watcher.Position.Location.Latitude;                                        // Falls dein Standort bestimmt werden konnte wird dein Standort auf der Karte angezeigt
+            y = _watcher.Position.Location.Longitude;
             StationgMapControl.DragButton = MouseButtons.Left;
             StationgMapControl.CanDragMap = true;
             StationgMapControl.MapProvider = GMapProviders.GoogleMap;
@@ -62,11 +64,11 @@ namespace TransportApp
         }
         private void tbxSearch_Click(object sender, EventArgs e)
         {
-            if (tbxStation.Text != "")
+            if (tbxStation.Text != "")                                                      // Hier wird eine Validation der eingegebener Station durchgeführt
             {
-                if (StationExists(tbxStation.Text))
+                if (_stationExists.Station(tbxStation.Text))
                 {
-                    StationBoardRoot stationBoardRoot = new StationBoardRoot();
+                    StationBoardRoot stationBoardRoot = new StationBoardRoot();             // Falls der Standort vorhanden ist, wird eine Funktion ShowMap ausgeführt
                     stationBoardRoot = _transport.GetStationBoard(tbxStation.Text, "");
                     ShowMap(stationBoardRoot);
                 }
@@ -81,30 +83,16 @@ namespace TransportApp
             }
 
         }
-        private bool StationExists(string StationName)
-        {
-            Stations stations = new Stations();
-            stations = _transport.GetStations(StationName);
-            foreach (Station station in stations.StationList)
-            {
-                if (station.Name == StationName)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        GMapOverlay markers = new GMapOverlay();
 
         private void ShowMap(StationBoardRoot stationBoardRoot)
         {
-            StationgMapControl.Overlays.Clear();
-            double lat = stationBoardRoot.Station.Coordinate.XCoordinate;
-            double lng = stationBoardRoot.Station.Coordinate.YCoordinate;
-            StationgMapControl.Position = new PointLatLng(lat, lng);
+            StationgMapControl.Overlays.Clear();                                            // Zuerst wird die Karte geleert, dann werden Längen und Breitengra der Stationen der zugeteilt
+            x = stationBoardRoot.Station.Coordinate.XCoordinate;                            
+            y = stationBoardRoot.Station.Coordinate.YCoordinate;
+            StationgMapControl.Position = new PointLatLng(x, y);
             StationgMapControl.Zoom = 18;
             StationgMapControl.MarkersEnabled = true;
-            PointLatLng point = new PointLatLng(lat, lng);
+            PointLatLng point = new PointLatLng(x, y);                                      // Ein Punkt wird auf die Station auf der Karte gesetzt
             GMapMarker marker = new GMarkerGoogle(point, GMarkerGoogleType.red_pushpin);
 
 
