@@ -202,7 +202,7 @@ namespace TransportApp
             this.btnHome.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(50, 48);
-            this.btnHome.TabIndex = 5;
+            this.btnHome.TabIndex = 6;
             this.btnHome.UseVisualStyleBackColor = true;
             this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
             // 
@@ -213,7 +213,7 @@ namespace TransportApp
             this.btnAbort.Location = new System.Drawing.Point(1074, 720);
             this.btnAbort.Name = "btnAbort";
             this.btnAbort.Size = new System.Drawing.Size(96, 32);
-            this.btnAbort.TabIndex = 7;
+            this.btnAbort.TabIndex = 8;
             this.btnAbort.Text = "Abbruch";
             this.btnAbort.UseVisualStyleBackColor = true;
             this.btnAbort.Click += new System.EventHandler(this.btnAbort_Click);
@@ -224,7 +224,7 @@ namespace TransportApp
             this.btnBack.Location = new System.Drawing.Point(956, 720);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(96, 32);
-            this.btnBack.TabIndex = 6;
+            this.btnBack.TabIndex = 7;
             this.btnBack.Text = "Zurück";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
@@ -237,7 +237,7 @@ namespace TransportApp
             this.btnMail.Location = new System.Drawing.Point(1056, 18);
             this.btnMail.Name = "btnMail";
             this.btnMail.Size = new System.Drawing.Size(56, 48);
-            this.btnMail.TabIndex = 9;
+            this.btnMail.TabIndex = 5;
             this.btnMail.UseVisualStyleBackColor = true;
             this.btnMail.Click += new System.EventHandler(this.btnMail_Click);
             // 
