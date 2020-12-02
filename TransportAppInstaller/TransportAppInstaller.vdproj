@@ -27,13 +27,13 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_5D9AD140391ECCD7D43C1A17DC0F3FCD"
+        "MsmKey" = "8:_2A5B8787E41A8B800BFAF0E72CF19083"
         "OwnerKey" = "8:_E6C7C2E11F954C1ABE1012D8BF96876F"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
-        "MsmKey" = "8:_5D9AD140391ECCD7D43C1A17DC0F3FCD"
+        "MsmKey" = "8:_2A5B8787E41A8B800BFAF0E72CF19083"
         "OwnerKey" = "8:_9E1B5A195EF7595684E0500A1EE0BE4D"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -64,12 +64,6 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_9B334D1AC2E8C2FF955FDB30174D29AE"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_E6C7C2E11F954C1ABE1012D8BF96876F"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -82,7 +76,7 @@
         "Entry"
         {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_5D9AD140391ECCD7D43C1A17DC0F3FCD"
+        "OwnerKey" = "8:_2A5B8787E41A8B800BFAF0E72CF19083"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -95,6 +89,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_2671CAB030C8A6CDEB65A4E1345CD6E7"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_9B334D1AC2E8C2FF955FDB30174D29AE"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -115,6 +115,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
         "Release"
         {
@@ -131,6 +139,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
     }
     "Deployable"
@@ -191,14 +215,14 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5D9AD140391ECCD7D43C1A17DC0F3FCD"
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_2A5B8787E41A8B800BFAF0E72CF19083"
             {
             "AssemblyRegister" = "3:1"
             "AssemblyIsInGAC" = "11:FALSE"
             "AssemblyAsmDisplayName" = "8:Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL"
                 "ScatterAssemblies"
                 {
-                    "_5D9AD140391ECCD7D43C1A17DC0F3FCD"
+                    "_2A5B8787E41A8B800BFAF0E72CF19083"
                     {
                     "Name" = "8:Newtonsoft.Json.dll"
                     "Attributes" = "3:512"
@@ -372,7 +396,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:TransportAppInstaller"
         "ProductCode" = "8:{F7C56FCE-C744-469D-AEC1-B7AD7F96260C}"
-        "PackageCode" = "8:{469B0A3E-600F-4568-8243-A817BE285B0B}"
+        "PackageCode" = "8:{7B39AB87-2203-4B1C-B1B0-90C89BA26479}"
         "UpgradeCode" = "8:{C897F456-7DDA-42B2-A58D-5EC465860D5C}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -380,7 +404,7 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:GoHardOrGoHome"
+        "Manufacturer" = "8:flgoller"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:TransportAppInstaller"
