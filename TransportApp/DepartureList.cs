@@ -28,22 +28,30 @@ namespace TransportApp
 
         private void tbxSearch_Click(object sender, EventArgs e)
         {
-            if(tbxDepartureStation.Text != "")                                                        // Validation der Station
+            try
             {
-                if (_stationExists.Station(tbxDepartureStation.Text))                  
+                if (tbxDepartureStation.Text != "")                                                        // Validation der Station
                 {
-                    StationBoardRoot stationBoardRoot = new StationBoardRoot();                       // Wert der eingegebener Station der Funktion "GetStationBoard" übergeben
-                    stationBoardRoot = _transport.GetStationBoard(tbxDepartureStation.Text, "");
-                    FillDataGridView(stationBoardRoot);
+                    if (_stationExists.Station(tbxDepartureStation.Text))
+                    {
+                        StationBoardRoot stationBoardRoot = new StationBoardRoot();                       // Wert der eingegebener Station der Funktion "GetStationBoard" übergeben
+                        stationBoardRoot = _transport.GetStationBoard(tbxDepartureStation.Text, "");
+                        FillDataGridView(stationBoardRoot);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Station existiert nicht");
+                    }
                 }
-                else 
+                else
                 {
-                    MessageBox.Show("Station existiert nicht");
+                    MessageBox.Show("Bitte das Feld 'Station' ausfüllen");
                 }
             }
-            else 
+            catch
             {
-                MessageBox.Show("Bitte das Feld 'Station' ausfüllen");
+                Exception ex = new Exception();
+                MessageBox.Show(ex.ToString());
             }
         
         }

@@ -64,22 +64,31 @@ namespace TransportApp
         }
         private void tbxSearch_Click(object sender, EventArgs e)
         {
-            if (tbxStation.Text != "")                                                      // Hier wird eine Validation der eingegebener Station durchgeführt
+            try
             {
-                if (_stationExists.Station(tbxStation.Text))
+                if (tbxStation.Text != "")                                                      // Hier wird eine Validation der eingegebener Station durchgeführt
                 {
-                    StationBoardRoot stationBoardRoot = new StationBoardRoot();             // Falls der Standort vorhanden ist, wird eine Funktion ShowMap ausgeführt
-                    stationBoardRoot = _transport.GetStationBoard(tbxStation.Text, "");
-                    ShowMap(stationBoardRoot);
+                    if (_stationExists.Station(tbxStation.Text))
+                    {
+                        StationBoardRoot stationBoardRoot = new StationBoardRoot();             // Falls der Standort vorhanden ist, wird eine Funktion ShowMap ausgeführt
+                        stationBoardRoot = _transport.GetStationBoard(tbxStation.Text, "");
+                        ShowMap(stationBoardRoot);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Station existiert nicht");
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Station existiert nicht");
+                    MessageBox.Show("Bitte das Feld 'Station' ausfüllen");
                 }
+
             }
-            else
+            catch
             {
-                MessageBox.Show("Bitte das Feld 'Station' ausfüllen");
+                Exception ex = new Exception();
+                MessageBox.Show(ex.ToString());
             }
 
         }

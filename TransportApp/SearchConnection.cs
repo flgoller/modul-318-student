@@ -135,50 +135,68 @@ namespace TransportApp
 
         private void tbxDeparture_TextChanged(object sender, EventArgs e)
         {
-            if (tbxDeparture.Text.Length >= 1 && tbxDeparture.Text != " ")              // AutoComplition vom Feld Abfahrtsort
+            try
             {
-                List<string> temp = new List<string>();
-                foreach (var station in _transport.GetStations(tbxDeparture.Text).StationList)
+                if (tbxDeparture.Text.Length >= 1 && tbxDeparture.Text != " ")              // AutoComplition vom Feld Abfahrtsort
                 {
-                    temp.Add(station.Name);
-                }
-                if(AutoCompletecheckBox.Checked == true)
-                {
-                    var autoComplete = new AutoCompleteStringCollection();
-                    autoComplete.AddRange(temp.ToArray());
-                    tbxDeparture.AutoCompleteCustomSource = autoComplete;
-                }
-                else
-                {
-                    var autoComplete = new AutoCompleteStringCollection();
-                    autoComplete.Clear();
-                    tbxArrival.AutoCompleteCustomSource = autoComplete;
+                    List<string> temp = new List<string>();
+                    foreach (var station in _transport.GetStations(tbxDeparture.Text).StationList)
+                    {
+                        temp.Add(station.Name);
+                    }
+                    if (AutoCompletecheckBox.Checked == true)
+                    {
+                        var autoComplete = new AutoCompleteStringCollection();
+                        autoComplete.AddRange(temp.ToArray());
+                        tbxDeparture.AutoCompleteCustomSource = autoComplete;
+                    }
+                    else
+                    {
+                        var autoComplete = new AutoCompleteStringCollection();
+                        autoComplete.Clear();
+                        tbxArrival.AutoCompleteCustomSource = autoComplete;
+                    }
                 }
             }
+            catch
+            {
+                Exception ex = new Exception();
+                MessageBox.Show(ex.ToString());
+            }
+
         }
         private void tbxArrival_TextChanged(object sender, EventArgs e)
         {
-            if (tbxArrival.Text.Length >= 1 && tbxArrival.Text != " ")              // AutoComplition vom Feld Ankunftsort
+            try
             {
-                List<string> temp = new List<string>();
-                foreach (var station in _transport.GetStations(tbxArrival.Text).StationList)
+                if (tbxArrival.Text.Length >= 1 && tbxArrival.Text != " ")              // AutoComplition vom Feld Ankunftsort
                 {
-                    temp.Add(station.Name);
-                }
-                if (AutoCompletecheckBox.Checked == true)
-                {
-                    var autoComplete = new AutoCompleteStringCollection();
-                    autoComplete.AddRange(temp.ToArray());
-                    tbxArrival.AutoCompleteCustomSource = autoComplete;
-                }
-                else
-                {
-                    var autoComplete = new AutoCompleteStringCollection();
-                    autoComplete.Clear();
-                    tbxArrival.AutoCompleteCustomSource = autoComplete;
-                }
+                    List<string> temp = new List<string>();
+                    foreach (var station in _transport.GetStations(tbxArrival.Text).StationList)
+                    {
+                        temp.Add(station.Name);
+                    }
+                    if (AutoCompletecheckBox.Checked == true)
+                    {
+                        var autoComplete = new AutoCompleteStringCollection();
+                        autoComplete.AddRange(temp.ToArray());
+                        tbxArrival.AutoCompleteCustomSource = autoComplete;
+                    }
+                    else
+                    {
+                        var autoComplete = new AutoCompleteStringCollection();
+                        autoComplete.Clear();
+                        tbxArrival.AutoCompleteCustomSource = autoComplete;
+                    }
 
+                }
             }
+            catch
+            {
+                Exception ex = new Exception();
+                MessageBox.Show(ex.ToString());
+            }
+
         }
 
     private void btnMail_click(object sender, EventArgs e)

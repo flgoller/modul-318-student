@@ -66,15 +66,24 @@ namespace TransportApp
             }
 
             else
-            {       
-                string x = _watcher.Position.Location.Latitude.ToString();                              // Dein Standort x und y übergeben
-                string y = _watcher.Position.Location.Longitude.ToString();
-                Stations stations = new Stations(); 
-                stations = _transport.GetStationsCoordinates(x, y);                                     // Nach Stationen in der Nähe suchen
-                string departure = "";
-                departure = stations.StationList[1].Name.ToString();                                    // Die nächste Station der Abfahrsstation übergeben
-                _connections = _transport.GetConnections(departure, arrivalCompany, Date, Time);        // Verbindung von deinem Standort zu der Firma suchen
-                FillDataGridViewConnections();
+            {
+                try
+                {
+                    string x = _watcher.Position.Location.Latitude.ToString();                              // Dein Standort x und y übergeben
+                    string y = _watcher.Position.Location.Longitude.ToString();
+                    Stations stations = new Stations();
+                    stations = _transport.GetStationsCoordinates(x, y);                                     // Nach Stationen in der Nähe suchen
+                    string departure = "";
+                    departure = stations.StationList[1].Name.ToString();                                    // Die nächste Station der Abfahrsstation übergeben
+                    _connections = _transport.GetConnections(departure, arrivalCompany, Date, Time);        // Verbindung von deinem Standort zu der Firma suchen
+                    FillDataGridViewConnections();
+                }
+                catch
+                {
+                    Exception ex = new Exception();
+                    MessageBox.Show(ex.ToString());
+                }
+
             }
 
             _watcher.Stop();
