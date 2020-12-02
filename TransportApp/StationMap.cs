@@ -11,7 +11,7 @@ namespace TransportApp
 {
     public partial class StationMap : Form
     {
-        GeoCoordinateWatcher _watcher = new GeoCoordinateWatcher();                         // Objekt für Standortbestimmung erzeugen
+        GeoCoordinateWatcher watcher = new GeoCoordinateWatcher();                         // Objekt für Standortbestimmung erzeugen
         Transport _transport = new Transport();                                             // Objekt von der Klasse Transport erstellen
         TransportApp.StationExists _stationExists = new TransportApp.StationExists();       // Objekt von eigener Klasse TransportApp erstellen
 
@@ -23,17 +23,18 @@ namespace TransportApp
         public StationMap()
         {
             InitializeComponent();
-            _watcher.Start();                                                               // Startet den Watcher beim Starten des Forms
+            watcher.Start();                                                               // Startet den Watcher beim Starten des Forms
         }
 
         private void StationMap_Load(object sender, EventArgs e)
         {
-          if (_watcher.Position.Location.IsUnknown)
+          if (watcher.Position.Location.IsUnknown)
           {
-            MessageBox.Show("Aktueller Standort nicht gefunden");                           // Beim öffnen der Karte wird eine Fehlermeldung angezeigt und die Position auf der Karte wird auf die Firma gesetzt, falls dein Standort nicht bestummen werden konte
-
-             x = 47.1;
-             y = 8.1;
+            watcher.TryStart(false, TimeSpan.FromMilliseconds(100000));
+            watcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(StationMap_Load);
+            MessageBox.Show("Aktueller Standort muss nocht geladen werden oder er wird nicht gefunden", "Bitte Versuchen Sie es Später erneut");                           // Beim öffnen der Karte wird eine Fehlermeldung angezeigt und die Position auf der Karte wird auf die Firma gesetzt, falls dein Standort nicht bestummen werden konte
+            x = 47.1;
+            y = 8.1;
 
              StationgMapControl.DragButton = MouseButtons.Left;
              StationgMapControl.CanDragMap = true;
@@ -49,8 +50,8 @@ namespace TransportApp
 
           else
           {
-            x = _watcher.Position.Location.Latitude;                                        // Falls dein Standort bestimmt werden konnte wird dein Standort auf der Karte angezeigt
-            y = _watcher.Position.Location.Longitude;
+            x = watcher.Position.Location.Latitude;                                        // Falls dein Standort bestimmt werden konnte wird dein Standort auf der Karte angezeigt
+            y = watcher.Position.Location.Longitude;
             StationgMapControl.DragButton = MouseButtons.Left;
             StationgMapControl.CanDragMap = true;
             StationgMapControl.MapProvider = GMapProviders.GoogleMap;
