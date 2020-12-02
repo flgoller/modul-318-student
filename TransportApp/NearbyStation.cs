@@ -22,8 +22,6 @@ namespace TransportApp
         {
             InitializeComponent();
             _watcher.Start();
-            _watcher.TryStart(false, TimeSpan.FromMilliseconds(100000));
-            _watcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(watcher_StatusChanged);
 
             int minute = DateTime.Now.Minute;                                                           // Aktuelle Uhrzeit und Datum übergeben
             int hours = DateTime.Now.Hour;
@@ -33,20 +31,8 @@ namespace TransportApp
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            //arbyStationdataGridView.ad;
-        }
-        private void FillDataGridView(Stations stations)
-        {
-            string yourGps = stations.StationList.First().Name.ToString();                              // DataGrid mit den Stationen füllen
-            NearbyStationdataGridView.Rows.Clear();
-            foreach (Station station in stations.StationList)
-            {
-                NearbyStationdataGridView.Rows.Add(yourGps, station.Name, station.Distance + " m");
-            }
-        }
-
-        void watcher_StatusChanged(object sender, GeoPositionStatusChangedEventArgs e)
-        {
+            _watcher.TryStart(false, TimeSpan.FromMilliseconds(100000));
+            _watcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(btnSearch_Click);
             if (_watcher.Position.Location.IsUnknown)                                                   // Validation deines Standorts
             {
                 MessageBox.Show("Aktueller Standort nicht gefunden");
@@ -60,10 +46,7 @@ namespace TransportApp
                     string y = _watcher.Position.Location.Longitude.ToString();
                     Stations stations = new Stations();
                     stations = _transport.GetStationsCoordinates(x, y);                                     // Nach Stationen in der Nähe suchen
-                    string departure = "";
-                    departure = stations.StationList[1].Name.ToString();                                    // Die nächste Station der Abfahrsstation übergeben
-                    _connections = _transport.GetConnections(departure, arrivalCompany, Date, Time);        // Verbindung von deinem Standort zu der Firma suchen
-                    FillDataGridViewConnections();
+                    FillDataGridView(stations);
                 }
                 catch
                 {
@@ -75,9 +58,20 @@ namespace TransportApp
 
             _watcher.Stop();
         }
+        private void FillDataGridView(Stations stations)
+        {
+            string yourGps = stations.StationList.First().Name.ToString();                              // DataGrid mit den Stationen füllen
+            NearbyStationdataGridView.Rows.Clear();
+            foreach (Station station in stations.StationList)
+            {
+                NearbyStationdataGridView.Rows.Add(yourGps, station.Name, station.Distance + " m");
+            }
+        }
 
         private void btnTakeMeHome_Click(object sender, EventArgs e)
         {
+            _watcher.TryStart(false, TimeSpan.FromMilliseconds(100000));
+            _watcher.StatusChanged += new EventHandler<GeoPositionStatusChangedEventArgs>(btnTakeMeHome_Click);
             if (_watcher.Position.Location.IsUnknown)                                                   // Validation deines Standorts
             {
                 MessageBox.Show("Aktueller Standort nicht gefunden");
