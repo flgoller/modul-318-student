@@ -89,53 +89,41 @@ namespace TransportApp
 
         private void tbxDepartureStation_TextChanged(object sender, EventArgs e)
         {
-            if (tbxDepartureStation.Text.Length >= 1 && tbxDepartureStation.Text != " ")              // AutoComplition vom Feld Ankunftsort
+            if (AutoCompletionCheckBox.Checked == true)
             {
-                List<string> temp = new List<string>();
-                foreach (var station in _transport.GetStations(tbxDepartureStation.Text).StationList)
+                if (tbxDepartureStation.Text.Length >= 1 && tbxDepartureStation.Text != " ")              // AutoComplition vom Feld Ankunftsort
                 {
-                    try
+                    List<string> temp = new List<string>();
+                    foreach (var station in _transport.GetStations(tbxDepartureStation.Text).StationList)
                     {
-                        temp.Add(station.Name);
-                    }
-                    catch
-                    {
-                        Exception ex = new Exception();
-                        MessageBox.Show(ex.ToString());
-                    }
-                   
-                }
-                if (AutoCompletionCheckBox.Checked == true)
-                {
-                    try
-                    {
-                        var autoComplete = new AutoCompleteStringCollection();
-                        autoComplete.AddRange(temp.ToArray());
-                        tbxDepartureStation.AutoCompleteCustomSource = autoComplete;
-                    }
-                    catch
-                    {
-                        Exception ex = new Exception();
-                        MessageBox.Show(ex.ToString());
-                    }
-                    
-                }
-                else
-                {
-                    try
-                    {
-                        var autoComplete = new AutoCompleteStringCollection();
-                        autoComplete.Clear();
-                        tbxDepartureStation.AutoCompleteCustomSource = autoComplete;
-                    }
-                    catch
-                    {
-                        Exception ex = new Exception();
-                        MessageBox.Show(ex.ToString());
-                    }
-                   
-                }
+                        try
+                        {
+                            temp.Add(station.Name);
+                        }
+                        catch
+                        {
+                            Exception ex = new Exception();
+                            MessageBox.Show(ex.ToString());
+                        }
 
+                    }
+                    if (AutoCompletionCheckBox.Checked == true)
+                    {
+                        try
+                        {
+                            var autoComplete = new AutoCompleteStringCollection();
+                            autoComplete.AddRange(temp.ToArray());
+                            tbxDepartureStation.AutoCompleteCustomSource = autoComplete;
+                        }
+                        catch
+                        {
+                            Exception ex = new Exception();
+                            MessageBox.Show(ex.ToString());
+                        }
+
+                    }
+
+                }
             }
         }
     }
